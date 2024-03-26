@@ -1,11 +1,11 @@
-function greeting(){
-    alert("Hi there!");
-    const name = prompt("What's your name?");
-    console.log(name);
-    alert("Your name is " + name + ", huh?");
-    alert(name + "...");
-    alert("Hey, " + name + "?");
-    alert("Can you click that button for me?");
+function greeting() {
+  alert("Hi there!");
+  const name = prompt("What's your name?");
+  console.log(name);
+  alert("Your name is " + name + ", huh?");
+  alert(name + "...");
+  alert("Hey, " + name + "?");
+  alert("Can you click that button for me?");
 }
 
 greeting();
@@ -19,9 +19,9 @@ summonButton.appendChild(sButtonText);
 
 document.body.appendChild(summonButton);
 
-
 // Images of the creature
-const tbh = "https://i.kym-cdn.com/entries/icons/facebook/000/039/484/cover7.jpg";
+const tbh =
+  "https://i.kym-cdn.com/entries/icons/facebook/000/039/484/cover7.jpg";
 const confetti = "https://media.tenor.com/EI8GDBpPCDoAAAAM/tbh-creature.gif";
 
 // Create a button to change the image
@@ -32,43 +32,37 @@ joyousButton.appendChild(jButtonText);
 
 const image = document.createElement("img");
 // Function for summoning the creature
-function summon(){
+function summon() {
+  image.src = tbh;
 
-    image.src = tbh;
+  document.body.appendChild(image);
+  document.body.appendChild(joyousButton);
+  document.body.removeChild(summonButton);
 
-    document.body.appendChild(image);
-    document.body.appendChild(joyousButton);
-    document.body.removeChild(summonButton);
-
-    alert("Thank you! You've released me from my prison after 10,000 years...")
-    request();
-
+  alert("Thank you! You've released me from my prison after 10,000 years...");
+  request();
 }
 
-function request(){
-
-    alert("Ahh... that's much better.");
-    alert("You know what would make me feel even better-er, " + name + "?" );
-    alert("If you pressed that yippee button over there...");
+function request() {
+  alert("Ahh... that's much better.");
+  alert("You know what would make me feel even better-er, " + name + "?");
+  alert("If you pressed that yippee button over there...");
 }
-
 
 // Changes the original image to a new one
-function yippee(){
+function yippee() {
+  if (image.src === tbh) {
+    image.src = confetti;
+    image.style.width = "500px";
+  }
+  alert("Yippee!");
 
-        if(image.src === tbh){
-            image.src = confetti;
-            image.style.width = "500px";
-        }
-        alert("Yippee!");
+  const army = document.createElement("img");
 
-        const army = document.createElement("img");
+  army.src = confetti;
 
-        army.src = confetti;
-
-        document.body.appendChild(army);
-
-    }
+  document.body.appendChild(army);
+}
 
 // Pressing the summon button will summon the creature
 summonButton.addEventListener("click", summon);
