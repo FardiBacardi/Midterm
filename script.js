@@ -57,11 +57,17 @@ function yippee() {
   }
   alert("Yippee!");
 
-  const army = document.createElement("img");
+  let clones = prompt(
+    "Now we multiply. How many soldiers in our army shall we summon?"
+  );
 
-  army.src = confetti;
+  for (let count = 0; count < clones; count++) {
+    const army = document.createElement("img");
 
-  document.body.appendChild(army);
+    army.src = confetti;
+
+    document.body.appendChild(army);
+  }
 }
 
 // Pressing the summon button will summon the creature
